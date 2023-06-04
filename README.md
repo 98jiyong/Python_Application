@@ -1,2 +1,2 @@
-# Upload
-업로드용 저장소
+# Python_Application
+파이썬응용 프로젝트 파일입니다.
