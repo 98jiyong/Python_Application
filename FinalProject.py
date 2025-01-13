@@ -3,10 +3,8 @@ import random
 import sys
 import time
 
-
-win_posx = 700
-win_posy = 300
-
+# win_posx = 700
+# win_posy = 300
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -14,7 +12,6 @@ FPS = 60
 
 score = 0
 playtime = 1
-
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -31,7 +28,6 @@ def initialize_game(width, height):
     pygame.display.set_caption("Pygame Shooting")
     return surface
 
-    
 def game_loop(surface):
     
     background = pygame.image.load('spacefield.png').convert()
@@ -40,7 +36,7 @@ def game_loop(surface):
     bullet_image = pygame.image.load('bullet.png').convert()
     asteroid_image = []
     asteroid_list = ['meteor1.png','meteor2.png', 'meteor3.png',
-                     'meteor4.png', 'meteor5.png']
+                    'meteor4.png', 'meteor5.png']
     for img in asteroid_list:
         asteroid_image.append(pygame.image.load(img).convert())
 
@@ -63,7 +59,6 @@ def game_loop(surface):
     global score
     score = 0
     sprite_group.add(player)
-    
 
     
     for i in range(10):
@@ -75,7 +70,7 @@ def game_loop(surface):
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                 running = False
+                running = False
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
                     running = False
@@ -88,8 +83,6 @@ def game_loop(surface):
                     player.shoot(sprite_group, bullets, bullet_image, shoot_sound)
             if event.type == pygame.MOUSEBUTTONDOWN:
                 player.shoot(sprite_group, bullets, bullet_image, shoot_sound)
-                    
-        
 
         sprite_group.update()
         
@@ -259,5 +252,3 @@ if __name__ == '__main__':
     screen = initialize_game(SCREEN_WIDTH,SCREEN_HEIGHT)
     game_loop(screen)
     sys.exit()
-
-
